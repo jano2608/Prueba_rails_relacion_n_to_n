@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light text-light bg-info">
+    <a class="navbar-brand">
+      <h5>TiKi-TiKi-Tiiii</h5>
+    </a>
+    <ul class="nav item">
+        
+      <% if user_signed_in? %>
+      <li><%= link_to "Mis Tareas ", todos_path, class:"nav-item nav-link text-dark" %></li>
+        <li class="nav-item <%= 'active' if action_name == 'Salir'%>">
+        
+        <%= link_to "Salir", destroy_user_session_path, method: :delete, class:"nav-item nav-link text-dark" %>
+        </li>
+        
+        <% else %>
+        <li class="nav-item <%= 'active' if action_name == 'Iniciar sesión'%>">
+        <%= link_to "Iniciar Sesión", new_user_session_path, class:"nav-item nav-link text-dark" %>
+        </li>
+        <li class="nav-item <%= 'active' if action_name == 'Registrarse'%>">
+        <%= link_to "Registro", new_user_registration_path, class:"nav-item nav-link text-dark" %>
+        <% end %>
+        </li>
+      </ul>
+  </nav>

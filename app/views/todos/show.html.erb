@@ -1,0 +1,26 @@
+<h2><%= @task.name %></h2>
+
+
+<p>
+    <%= image_tag @task.photo%>
+</p>
+
+<% @todos.each do |todo| %>
+      <%if todo.completed?%>
+       <h2>Completado</h2>
+       <%else%>
+     <h2>no completado</h2>
+     <%end%>
+     <br>
+   
+        <table class="table">
+                <tr>
+                <th scope="col">Quienes ya lo terminaron</th>
+                </tr>
+                <td>
+        <%= todo.user.email %>
+    </td>
+    </table>
+    <% end %>
+<br>
+<%= link_to 'Back', todos_path %>
