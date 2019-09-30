@@ -1,6 +1,10 @@
 class TodosController < ApplicationController
   def index
-    @todos = current_user.todos
+    if user_signed_in?
+      @todos = current_user.todos
+      else
+        @tasks = Task.all
+     end
   end
 
   def show
@@ -15,4 +19,7 @@ class TodosController < ApplicationController
     todo.save
     redirect_to todos_path
   end
+
+
+
 end

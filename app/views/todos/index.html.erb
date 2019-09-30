@@ -17,7 +17,7 @@
        </div>
        <% else %>
      <div class="card">
-      <%= image_tag todo.task.photo, class: 'card-img-top img-thumbnail filter: grayscale(100%);' %>
+      <%= image_tag todo.task.photo, class: 'card-img-top img-thumbnail ' %>
       <div class="card-body">
         <h5 class="card-title"><%= todo.task.name  %></h5>
         <%= link_to "No Completado", update_todo_path(todo), method: :patch, class: "btn btn-danger" %>

@@ -1,1 +1,15 @@
 
+<% @tasks.each_slice(3) do |tasks| %>
+<div class="card-deck">
+ <% tasks.each do |task| %>
+ <div class="card">
+   <img src="<%=task.photo%>" class="card-img-top" alt="...">
+   <div class="card-body">
+       <h5 class='card-title'><%=task.name%> </h5>
+       </div>
+  
+ </div>
+   <% end %>
+</div>
+<br>
+<%end%>

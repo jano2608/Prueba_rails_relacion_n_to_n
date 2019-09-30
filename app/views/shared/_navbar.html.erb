@@ -5,6 +5,7 @@
     <ul class="nav item">
         
       <% if user_signed_in? %>
+      <h3><%=current_user.todos.where(completed: true).count%> de 9</h3>
       <li><%= link_to "Mis Tareas ", todos_path, class:"nav-item nav-link text-dark" %></li>
         <li class="nav-item <%= 'active' if action_name == 'Salir'%>">
         
