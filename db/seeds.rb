@@ -8,7 +8,7 @@
 Task.destroy_all
 9.times do |i|
     Task.create(
-        name: "Task #{i+1}",
+        name: "nombre #{i+1}",
         photo: "https://picsum.photos/id/#{i+6}/500/500"
         )
 end
